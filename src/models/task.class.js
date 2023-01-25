@@ -4,7 +4,7 @@ import { LEVELS } from "./levels.enum";
 export class Task{
     name =  '';
     description = '';
-    completed = 'false';
+    completed = 'true';
     level = LEVELS.NORMAL;
 
 
