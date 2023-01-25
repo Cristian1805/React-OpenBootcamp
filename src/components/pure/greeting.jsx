@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 class Greeting extends Component {
 
+
+
     constructor(props){
         super(props);
         this.state = {
@@ -25,13 +27,26 @@ class Greeting extends Component {
             <h2>
                 Tu edad es de: {this.state.age}
             </h2>
+
+            <div>
+                <button onClick={this.cumpleaños}>
+                    Cumplir años
+                </button>
+            </div>
                 
             </div>
         );
+    };
+
+    cumpleaños = () => {
+        this.setState((prevState) => (
+            {
+                age: prevState.age + 1
+            }
+        ))
     }
+    
 }
-
-
 Greeting.propTypes = {
 
     name: PropTypes.string,

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Greeting from './components/pure/greeting';
+//import funcion_greeting from './components/pure/funcion_greeting';
+import Funcion_greeting from './components/pure/funcion_greeting';
 
 function App() {
   return (
@@ -9,10 +10,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         
         {/* Componente propio Greeting.js*/ }
+        {/* <Greeting></Greeting> */}
+        {/* <funcion_greeting name ="Cristhian"></funcion_greeting> */}
 
-        <Greeting></Greeting>
+        <funcion_greeting name="Cristhian"></funcion_greeting>
 
-
+        
       </header>
     </div>
   );
