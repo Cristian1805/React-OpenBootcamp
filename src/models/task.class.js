@@ -4,8 +4,8 @@ import { LEVELS } from "./levels.enum";
 export class Task{
     name =  '';
     description = '';
-    completed = 'false'
-    level = LEVELS.NORMAL
+    completed = 'false';
+    level = LEVELS.NORMAL;
 
 
     constructor (name, description, completed, level){
