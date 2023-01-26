@@ -20,6 +20,9 @@ const TaskListComponent = () => {
             </div>
             {/* Aplicar un map para renderizar una lista */}
             <TaskComponent task={defaultTask}></TaskComponent>
+
+            {/* Componentes para renderizar la lista de contactos */}
+            
         </div>
     );
 };
