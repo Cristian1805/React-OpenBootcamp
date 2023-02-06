@@ -1,30 +1,40 @@
-import React from 'react';
-import {LEVELS} from '../../models/levels.enum.js'
-import { Task } from '../../models/task.class';
+import React, { useState, useEffect } from 'react';
+import { LEVELS } from '../../models/levels.enum';
+import { Task } from '../../models/task.class'
 import TaskComponent from '../pure/task';
-
 
 const TaskListComponent = () => {
 
+    const defaultTask = new Task('Example', 'Default description', false, LEVELS.NORMAL);
 
-    const defaultTask = new Task('Ejemplo 1', 'Default description', false, LEVELS.NORMAL);
+    // Estado del componente
+    const [tasks, setTasks] = useState([defaultTask]);
+    const [loading, setLoading] = useState (true);
 
-    // const changeState = (id) => {
-    //     console.log('TODO: camibiar el estado de una tarea');
-    // }
+    // Control del ciclo de vida del componente
+    useEffect(() => {
+        console.log('Task State has been modified');
+        setLoading(false);
+        return () => {
+            console.log('TaskList component is going to unmount...')
+        }
+    }, [tasks]) 
+
+
+    const changeCompleted = (id) => {
+        console.log('TODO: Cambiar estado de una tarea')
+    }
 
     return (
         <div>
             <div>
-                <h1> Your Taks:</h1>
+                <h1>Your Tasks:</h1>
             </div>
-            {/* Aplicar un map para renderizar una lista */}
+            {/* TODO: Aplicar un For/Map para renderizar un a lista */}
             <TaskComponent task={defaultTask}></TaskComponent>
-
-            {/* Componentes para renderizar la lista de contactos */}
-            
         </div>
     );
 };
+
 
 export default TaskListComponent;
