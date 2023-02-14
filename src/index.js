@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //Añadirmos bootstrap a nuestro proyecto
 import 'bootstrap/dist/css/bootstrap.css';
-//!Los estilos propioos deben ir debajo del bootstrap para no pisarlos
+//!Los estilos propios deben ir debajo del bootstrap para no pisarlos
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+ s
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
