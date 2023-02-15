@@ -5,6 +5,7 @@ import { Task } from '../../models/task.class'
 
 //En esta parte de importa las hojas de estilos
 import '../../styles/task.scss'
+import { LEVELS } from '../../models/levels.enum';
 
 
 const TaskComponent = ({task}) => {
@@ -16,8 +17,42 @@ const TaskComponent = ({task}) => {
         };
     }, [task]);
 
+    //Se va a comprobar si se trata de un level o de otro
+    function taskLevelBadge(){
+        switch (task.level) {
+            case LEVELS.NORMAL:
+                return(<h6 className='mb-0'>
+                    <span className='badge bg-primary'>
+                        {task.level}
+                    </span>
+                </h6>)
+            case LEVELS.URGENTE:
+                return(<h6 className='mb-0'>
+                    <span className='badge bg-warning'>
+                        {task.level}
+                    </span>
+                </h6>)
+             case LEVELS.BLOCKING:
+                return(<h6 className='mb-0'>
+                    <span className='badge bg-danger'>
+                        {task.level}
+                    </span>
+                </h6>)
+            default:
+                break;
+        }
+
+    }
 
 
+    // Funcion retornara una bandera en donde se verifica si el icono esta activado o no
+    function taskCompletedIcon(){
+        if (task.completed){
+            return (<i className='bi-toggle-on' style = {{color : 'green'}}></i>)
+        } else{
+            return (<i className='bi-toggle-of' style = {{color : 'grey'}}></i>)
+        }
+    }
 
     return (
 
@@ -28,40 +63,23 @@ const TaskComponent = ({task}) => {
             <td className='align-middle'>
                 <span>{task.description}</span>
             </td>
-
+            
+            {/* Ejecucion de la funcion que retornara el elemento badge */}
             <td className='align-middle'>
-                {/* TODO: Sustituir por un badge */}
-                <span>{task.level}</span>
+                {taskLevelBadge()}
             </td>
-
+ 
             <td className='align-middle'>
-            {/* TODO: Sustituir por iconos */}
-                <span>{task.completed}</span>
+            
+
+            {/* Ejecucion de la funcion */}
+            {taskCompletedIcon()}
+    
+                <i className='bi-trash' style = {{color : 'tomato'}}></i>
+                {/* <span>{task.completed ? 'Completed' : 'Pending'}</span> */}
             </td>
 
         </tr>
-
-
-
-        // <div>
-
-        // <h2 className='task-name'>
-        //     Nombre: {task.name}
-        // </h2>
-
-        // <h3>
-        //     Descripcion: {task.description}
-        // </h3>
-
-        // <h4>
-        //     Level: {task.level} 
-        // </h4>
-
-        // <h5>
-        //     This task is: {task.completed ? 'COMPLETED': 'PENDIENTE'}
-        // </h5>
-            
-        // </div>
     );
 };
 

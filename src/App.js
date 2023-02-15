@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 // import Clock from './components/pure/Clock';
-import TaskListComponent from './components/containers/task_list';
+// import TaskListComponent from './components/containers/task_list';
 //import funcion_greeting from './components/pure/funcion_greeting';
 //import Funcion_greeting from './components/pure/funcion_greeting';
-//import TaskListComponent from './components/containers/task_list';
+import TaskListComponent from './components/containers/task_list';
 // import Ejemplo1 from './hooks/Ejemplo 1';
 //import Ejemplo2 from './hooks/Ejemplo2'; 
 //import GreetingStyles from './components/pure/greetingStyles';
@@ -32,10 +32,10 @@ function App() {
         {/* {<Clock> </Clock>} */}
         {/* </header> */}
 
-        <TaskListComponent></TaskListComponent>
+        <TaskListComponent></TaskListComponent> 
     </div>
   );
 }
-
-
+ 
+ 
 export default App;
